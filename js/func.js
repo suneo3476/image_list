@@ -1,11 +1,17 @@
 $(function(){
 	$("#image img").click(function(){
-		$("#screen img")
-		.attr("src",$(this).attr("src"))//screen‚Ìsrc‘®«‚ğƒNƒŠƒbƒN‚µ‚½‰æ‘œ‚Ìsrc‘®«‚É·‚µ‘Ö‚¦
-		.attr("height",$(this).attr("height"))//height‚Å“¯‚¶‚±‚Æ
-		.attr("width",$(this).attr("width"));//width‚Å“¯‚¶‚±‚Æ
+		$("#screen #view").html("").html('<img src=""/>');
+		var url = $(this).attr("src");
+		var img = new Image();
+		img.onload = function() {
+			$("#screen #view img")
+			.attr("src", url)
+			.attr("width", img.width)
+			.attr("height", img.height);
+			console.log(img.width+":"+img.height);
+		}
+		img.src = url;
 		return false;
 	});
 });
-//‰Û‘èF1.jpg‚Ìwidth‚Æheight‚ğˆø‚«Œp‚¢‚Å‚µ‚Ü‚Á‚Ä‚¢‚éB
-//‘Îô‚Ì‚Â‚à‚è‚Å5s‚Æ6s‚ğ‘‚¢‚½‚¯‚ÇAˆÓ–¡ˆ×‚µ‚Ä‚È‚¢•µˆÍ‹CB
+//èª²é¡Œï¼šDOMã®å‰Šé™¤ã¨ä½œæˆã‚’ã›ãšã«ã‚„ã‚ŠãŸã„ã‚“ã ã‚ˆãªãâ€¦ã€‚
