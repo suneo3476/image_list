@@ -1,0 +1,23 @@
+body{
+	background:#999;
+}
+#image{
+	float:left;
+	width:30%;
+	height:100%;
+	background:#666;
+}
+#screen{
+	float:left;
+	width:70%;
+	height:100%;
+	background:#333;
+}
+#image img{	/* 画像リストのアイコン化 */
+	width:32px;
+	height:32px;
+}
+#screen img{
+	width:50%;
+	height:50%;
+}
